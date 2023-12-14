@@ -22,6 +22,7 @@ export class TvApp extends LitElement {
       name: { type: String },
       source: { type: String },
       listings: { type: Array },
+  
     };
   }
   // LitElement convention for applying styles JUST to our element
@@ -79,7 +80,7 @@ export class TvApp extends LitElement {
   itemClick(e) {
     console.log(e.target);
     const dialog = this.shadowRoot.querySelector('.dialog');
-    dialog.show();
+    dialog.show(Topic_1);
   }
 
   // LitElement life cycle for when any property changes

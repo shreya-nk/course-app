@@ -1,4 +1,5 @@
  // import stuff
+import { SlDialog } from '@shoelace-style/shoelace';
 import { LitElement, html, css } from 'lit';
 
 export class TvChannel extends LitElement {
@@ -31,7 +32,8 @@ export class TvChannel extends LitElement {
     return {
       title: { type: String },
       presenter: { type: String },
-      topics: { type: Array}
+      topics: { type: Array},
+      current: { type: Number }
     };
   }
   // LitElement convention for applying styles JUST to our element
@@ -55,6 +57,19 @@ export class TvChannel extends LitElement {
       `;
   }
 }
+
+this.current = 0;
+    if (window.location.hash) {
+      const hashIndex = parseInt(window.location.hash.substring(1), 10);
+      if (
+        !isNaN(hashIndex) && hashIndex >= 0 &&
+        hashIndex < this.topics.length
+      ) {
+        this.current = hashIndex;
+      }else{
+        SlDialog("wrong lecture");
+      }
+    }
 // tell the browser about our tag and class it should run when it sees it
 customElements.define(TvChannel.tag, TvChannel);
 
