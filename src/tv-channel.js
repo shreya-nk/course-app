@@ -7,6 +7,20 @@ export class TvChannel extends LitElement {
     super();
     this.title = '';
     this.presenter = '';
+    this.topics = [
+      
+        { title: "Topic 1", content: "Content for Topic 1" },
+        { title: "Topic 2", content: "Content for Topic 2" },
+        { title: "Topic 3", content: "Content for Topic 3" },
+        { title: "Topic 4", content: "Content for Topic 4" },
+        { title: "Topic 5", content: "Content for Topic 5" },
+        { title: "Topic 6", content: "Content for Topic 6" },
+        { title: "Topic 7", content: "Content for Topic 7" },
+        { title: "Topic 8", content: "Content for Topic 8" },
+        { title: "Topic 9", content: "Content for Topic 9" },
+        { title: "Topic 10", content: "Content for Topic 10" }
+      ]
+    
   }
   // convention I enjoy using to define the tag's name
   static get tag() {
@@ -17,6 +31,7 @@ export class TvChannel extends LitElement {
     return {
       title: { type: String },
       presenter: { type: String },
+      topics: { type: Array}
     };
   }
   // LitElement convention for applying styles JUST to our element
@@ -35,9 +50,7 @@ export class TvChannel extends LitElement {
   render() {
     return html`
       <div class="wrapper">
-        <h3>${this.title}</h3>
-        <h4>${this.presenter}</h4>
-        <slot></slot>
+       
       </div>  
       `;
   }

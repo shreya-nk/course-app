@@ -11,18 +11,6 @@ export class TvApp extends LitElement {
     this.name = '';
     this.source = new URL('../assets/channels.json', import.meta.url).href;
     this.listings = [];
-    this.topics = [
-      { title: "Topic 1", content: "Content for Topic 1" },
-      { title: "Topic 2", content: "Content for Topic 2" },
-      { title: "Topic 3", content: "Content for Topic 3" },
-      { title: "Topic 4", content: "Content for Topic 4" },
-      { title: "Topic 5", content: "Content for Topic 5" },
-      { title: "Topic 6", content: "Content for Topic 6" },
-      { title: "Topic 7", content: "Content for Topic 7" },
-      { title: "Topic 8", content: "Content for Topic 8" },
-      { title: "Topic 9", content: "Content for Topic 9" },
-      { title: "Topic 10", content: "Content for Topic 10" },
-    ];
   }
   // convention I enjoy using to define the tag's name
   static get tag() {
@@ -34,11 +22,7 @@ export class TvApp extends LitElement {
       name: { type: String },
       source: { type: String },
       listings: { type: Array },
-      title: { type: Array },
-      descriptions: { type: Array },
-      topics: { type: Array },
-
-     
+    };
   }
   // LitElement convention for applying styles JUST to our element
   static get styles() {
@@ -68,11 +52,18 @@ export class TvApp extends LitElement {
           `
         )
       }
-      <div>
-        <!-- video -->
-        <!-- discord / chat - optional -->
-      </div>
-      <!-- dialog -->
+       <div class="lecture-screen">
+
+</div>
+
+<div class="lecture-slide-info">
+
+<div class="slide-buttons">
+  <button class=prev> Previous Slide </button>
+  <button class=next> Next Slide </button>
+<span class=lecture-slide-list>
+<button class=lecture-slide> lecture-slide </button>
+</span>
       <sl-dialog label="Dialog" class="dialog">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         <sl-button slot="footer" variant="primary" @click="${this.closeDialog}">Close</sl-button>
