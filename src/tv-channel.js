@@ -1,4 +1,4 @@
-// import stuff
+ // import stuff
 import { LitElement, html, css } from 'lit';
 
 export class TvChannel extends LitElement {
@@ -44,3 +44,5 @@ export class TvChannel extends LitElement {
 }
 // tell the browser about our tag and class it should run when it sees it
 customElements.define(TvChannel.tag, TvChannel);
+
+// activeClick
