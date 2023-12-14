@@ -70,6 +70,8 @@ this.current = 0;
         SlDialog("wrong lecture");
       }
     }
+
+    updated(ch)
 // tell the browser about our tag and class it should run when it sees it
 customElements.define(TvChannel.tag, TvChannel);
 

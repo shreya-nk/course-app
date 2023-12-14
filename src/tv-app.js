@@ -95,6 +95,14 @@ export class TvApp extends LitElement {
     });
   }
 
+  if (changedProperties.has(listeningForInput)) {
+    composed: true,
+    detail {
+      value: this.focused
+
+    }
+  }
+
   async updateSourceData(source) {
     await fetch(source).then((resp) => resp.ok ? resp.json() : []).then((responseData) => {
       if (responseData.status === 200 && responseData.data.items && responseData.data.items.length > 0) {
